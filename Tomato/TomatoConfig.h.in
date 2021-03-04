@@ -1,3 +1,0 @@
-// The configured options and settings for Tomato Engine
-#define Tomato_VERSION_MAJOR @TomatoEngine_VERSION_MAJOR@
-#define Tomato_VERSION_MINOR @TomatoEngine_VERSION_MINOR@
