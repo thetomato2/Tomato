@@ -7,11 +7,11 @@ namespace App
 	Application::Application() {
 		m_console.CreateConsole();
 	}
-	void Application::Application::Go() {
+	int Application::Application::Go() {
 		int counter = 0;
 		while (true) {
 			std::cout << counter++ << std::endl;
-
 		}
+		return 0;
 	}
 }

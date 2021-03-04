@@ -7,7 +7,7 @@ namespace App
 	public:
 		Application();
 		~Application() = default;
-		void Go();
+		int Go();
 	private:
 		TDX::Console m_console;
 	};
