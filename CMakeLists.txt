@@ -42,8 +42,10 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 list(APPEND CMAKE_PREFIX_PATH "${PROJECT_SOURCE_DIR}")
 
 # Include sub-projects.
+add_subdirectory ("TomatoWin")
 add_subdirectory ("TomatoUtils")
 add_subdirectory ("TomatoDX")
+add_subdirectory ("Lua")
 add_subdirectory("App")
 
 # Pre-Compiled HEaders

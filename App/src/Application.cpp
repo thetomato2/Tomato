@@ -4,15 +4,29 @@
 
 namespace App
 {
-	Application::Application() {
+	Application::Application()
+	: m_window(1024, 768, "Tomato") {
 		m_console.CreateConsole();
+		m_window.SetForeground();
 	}
-	int Application::Application::Go() {
-		std::cout << Tomato::Test() << std::endl;
-		int counter = 0;
+
+	// main loop
+	void Application::DoFrame() {
+				
+	}
+
+	int Application::Application::Go() {	
+		// start the main loop
+
+		
 		while (true) {
-			std::cout << counter++ << std::endl;
+			// process all messages pending but do not block new messages
+			if (const auto ecode = Tomato::Window::ProcessMessage()) {
+				// if return optional has value it means we are quitting
+				// so return exit code
+				return *ecode;
+			}
+			DoFrame();
 		}
-		return 0;
 	}
 }
