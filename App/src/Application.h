@@ -1,5 +1,6 @@
 #pragma once
 #include "TomatoDX/TomatoDX.h"
+#include "TomatoUtils/TomatoUtils.h"
 
 namespace App
 {
@@ -9,6 +10,6 @@ namespace App
 		~Application() = default;
 		int Go();
 	private:
-		TDX::Console m_console;
+		Tomato::Console m_console;
 	};
 }

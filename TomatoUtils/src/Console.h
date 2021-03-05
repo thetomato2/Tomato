@@ -4,7 +4,7 @@
 #include <tchar.h>
 #include <windows.h>
 
-namespace TDX
+namespace Tomato
 {
 	class Console {
 	public:

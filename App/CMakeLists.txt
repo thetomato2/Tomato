@@ -6,3 +6,4 @@ add_executable(App WIN32 "src/WinMain.cpp" "src/Application.h" "src/Application.
 target_include_directories(App PRIVATE src/)
 
 target_link_libraries(App PRIVATE TDX)
+target_link_libraries(App PRIVATE TomUtils)

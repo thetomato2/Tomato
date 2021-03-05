@@ -8,6 +8,7 @@ namespace App
 		m_console.CreateConsole();
 	}
 	int Application::Application::Go() {
+		std::cout << Tomato::Test() << std::endl;
 		int counter = 0;
 		while (true) {
 			std::cout << counter++ << std::endl;
