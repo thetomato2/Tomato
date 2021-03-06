@@ -148,13 +148,17 @@ namespace Tomato
 
 		switch (msg) {
 		case  WM_CLOSE:
+			// TODO: add confirmation message box
 			PostQuitMessage(0);
 			return 0;
 			// clear state when windows loses focus to prevent input getting stuck
 		case WM_KILLFOCUS:
 			m_keyboard.ClearState();
 			break;
-
+		case WM_MENUCHAR:
+			// disables annoying beeping and such
+			return MAKELRESULT(0, MNC_CLOSE);
+			break;
 			//--------Keyboard------------//
 		case WM_KEYDOWN:
 			// ALT and F10 are not not tracked in keydown, but in syskeydown
