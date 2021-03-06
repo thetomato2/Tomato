@@ -25,7 +25,7 @@ namespace App
 		if (m_window.m_keyboard.KeyIsPressed(0x54)) {
 			TOM_LOG_DEBUG("T");
 		}
-
+		
 		if (m_window.m_keyboard.ReadKey().IsPress()) {
 			std::ostringstream oss;
 			oss <<  m_window.m_keyboard.ReadChar();
@@ -59,6 +59,7 @@ namespace App
 		TOM_LOG_INFO(oss.str());
 
 		TOM_LOG_INFO("App configured. Main loop starting...");
+		TOM_LOG_INFO("Hello slu");
 
 		// start the main loop
 		while (true) {
