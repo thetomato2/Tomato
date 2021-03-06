@@ -12,7 +12,6 @@
 namespace Tomato
 {
 // Log Policies
-
 	// Virtual abstract class - interface to open and close streams (and to write them)
 	class LogPolicyInterface {
 	public:
@@ -34,13 +33,13 @@ namespace Tomato
 		std::ofstream m_outputStream;
 	};
 
-
 	// Message types
 	enum SeverityType {
 		Info = 0,
 		Debug,
 		Warning,
-		Error
+		Error,
+		Config
 	};
 
 	// Logger
@@ -175,3 +174,5 @@ namespace Tomato
 		this->Print<severity>(std::stringstream(stream.str()));
 	}
 }
+
+

@@ -41,8 +41,11 @@ namespace Tomato
 			std::wcout.clear();
 			std::wclog.clear();
 			std::wcerr.clear();
+			m_conOut = hConOut;
 		}
+		HANDLE GetConOut() const noexcept { return m_conOut; }
 	private:
 		bool m_isActive = false;
+		HANDLE m_conOut;
 	};
 }

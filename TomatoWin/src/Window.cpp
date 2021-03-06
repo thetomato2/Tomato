@@ -84,6 +84,12 @@ namespace Tomato
 		::SetForegroundWindow(m_hWnd);
 	}
 
+	void Window::SetResolution(int width, int height) {
+		m_width = width;
+		m_height = height;
+		SetWindowPos(m_hWnd, 0, 0, 0, m_width, m_height, SWP_SHOWWINDOW | SWP_NOMOVE);
+	}
+
 	std::optional<int> Window::ProcessMessage() noexcept {
 		MSG msg;
 		// while queue has messages, remove and dispatch them (but do not block and empty queue)

@@ -9,6 +9,7 @@ set(TomatoUtils_SRCS
 	"src/TomatoException.cpp"
 	"src/Log.cpp"
 	"src/ServiceLocator.cpp"
+	"src/StringConverter.cpp"
 )
 
 set(TomatoUtils_HDRS
@@ -16,11 +17,10 @@ set(TomatoUtils_HDRS
 	"src/TomatoException.h"
 	"src/Log.h"
 	"src/ServiceLocator.h"
+	"src/StringConverter.h"
 )
 
 add_library(TomUtils ${TomatoUtils_SRCS} ${TomatoUtils_HDRS})
-
-target_link_libraries(TomUtils PRIVATE "Shlwapi" "Pathcch")
 
 target_include_directories(TomUtils
 	PUBLIC

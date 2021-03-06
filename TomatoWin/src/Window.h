@@ -5,6 +5,13 @@
 #include "Mouse.h"
 #include <TomatoUtils/TomatoUtils.h>
 
+#pragma once
+
+#define TOM_EXCEPT(hr) Tomato::Window::HrException(__LINE__, __FILE__, hr) 
+#define TOM_LAST_EXCEPT() Tomato::Window::HrException(__LINE__, __FILE__, GetLastError())
+#define TOM_NOGFX_EXCEPT() Tomato::Window::NoGfxException(__LINE__, __FILE__)
+
+
 namespace Tomato
 {
 	class Window {
@@ -50,6 +57,7 @@ namespace Tomato
 		Window& operator=(const Window&) = delete;
 		void SetTitle(const std::string& title);
 		void SetForeground() const noexcept;
+		void SetResolution(int width, int hieght);
 		static std::optional<int> ProcessMessage() noexcept;
 		//Graphics& Gfx();
 	private:
@@ -66,3 +74,4 @@ namespace Tomato
 		//std::unique_ptr<Graphics> m_graphics;
 	};
 }
+

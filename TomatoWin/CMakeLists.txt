@@ -16,9 +16,12 @@ set(TomatoWin_HDRS
 	"src/TomatoWindows.h"
 	"src/Keyboard.h"
 	"src/Mouse.h"
+	"src/WindowsThrowMacros"
 )
 
 add_library(TomWin ${TomatoWin_SRCS} ${TomatoWin_HDRS})
+
+target_link_libraries(TomWin PRIVATE "Shlwapi" "Pathcch")
 
 target_link_libraries(TomWin PRIVATE TomUtils)
 
