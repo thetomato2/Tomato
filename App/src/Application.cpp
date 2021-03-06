@@ -18,6 +18,19 @@ namespace App
 
 	// main loop
 	void Application::DoFrame() {
+		if (m_window.m_keyboard.KeyIsPressed(VK_SPACE)) {
+			TOM_LOG_DEBUG("Space is pressed!");
+		}
+
+		if (m_window.m_keyboard.KeyIsPressed(0x54)) {
+			TOM_LOG_DEBUG("T");
+		}
+
+		if (m_window.m_keyboard.ReadKey().IsPress()) {
+			std::ostringstream oss;
+			oss <<  m_window.m_keyboard.ReadChar();
+			TOM_LOG_DEBUG(oss.str());
+		}
 
 	}
 

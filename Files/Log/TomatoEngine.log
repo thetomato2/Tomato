@@ -1,8 +1,6 @@
-0: 3/6/2021 2:4:43	INFO:    mainThread:	The file logger was created successfully.
+0: 3/6/2021 13:24:47	INFO:    mainThread:	The file logger was created successfully.
 
-1: 3/6/2021 2:4:43	INFO:    mainThread:	Resolution is x: 800, y: 600
+1: 3/6/2021 13:24:47	INFO:    mainThread:	Resolution is x: 800, y: 600
 
 
-2: 3/6/2021 2:4:43	INFO:    mainThread:	App configured. Main loop starting...
-
-3: 3/6/2021 2:4:47	INFO:    mainThread:	The file logger was shut down.
+2: 3/6/2021 13:24:47	INFO:    mainThread:	App configured. Main loop starting...
