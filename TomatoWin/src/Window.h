@@ -7,17 +7,17 @@
 
 #pragma once
 
-#define TOM_EXCEPT(hr) Tomato::Window::HrException(__LINE__, __FILE__, hr) 
-#define TOM_LAST_EXCEPT() Tomato::Window::HrException(__LINE__, __FILE__, GetLastError())
-#define TOM_NOGFX_EXCEPT() Tomato::Window::NoGfxException(__LINE__, __FILE__)
+#define TOM_EXCEPT(hr) TomWin::Window::HrException(__LINE__, __FILE__, hr) 
+#define TOM_LAST_EXCEPT() TomWin::Window::HrException(__LINE__, __FILE__, GetLastError())
+#define TOM_NOGFX_EXCEPT() TomWin::Window::NoGfxException(__LINE__, __FILE__)
 
 
-namespace Tomato
+namespace TomWin
 {
 	class Window {
 	public:
-		class Exception : public TomatoException {
-			using TomatoException::TomatoException;
+		class Exception : public TomUtils::TomatoException{
+			using TomUtils::TomatoException::TomatoException;
 		public:
 			static std::string TranslateErrorCode(HRESULT hr) noexcept;
 		};

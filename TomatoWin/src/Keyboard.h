@@ -2,7 +2,7 @@
 #include <queue>
 #include <bitset>
 
-namespace Tomato
+namespace TomWin
 {
 	class Keyboard {
 		friend class Window;

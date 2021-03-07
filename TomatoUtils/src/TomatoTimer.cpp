@@ -1,7 +1,7 @@
 #include "TomatoTimer.h"
 
 
-namespace Tomato {
+namespace TomUtils {
 
 	TomatoTimer::TomatoTimer() {
 		m_last = std::chrono::steady_clock::now();

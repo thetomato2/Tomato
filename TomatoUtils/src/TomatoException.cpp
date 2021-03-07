@@ -1,7 +1,8 @@
 #include "TomatoException.h"
 #include <sstream>
 
-namespace Tomato
+namespace TomUtils
+
 {
 	TomatoException::TomatoException(int line, const char* file) noexcept
 		: m_line(line), m_file(file) {

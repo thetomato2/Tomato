@@ -1,6 +1,6 @@
 #include "Keyboard.h"
 
-namespace Tomato
+namespace TomWin
 {
 	bool Keyboard::KeyIsPressed(unsigned char keycode) const noexcept {
 		return keystates[keycode];

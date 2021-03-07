@@ -3,7 +3,7 @@
 //#include "Tomato/Macros/WindowsThrowMacros.h"
 //#include "ImGui/ImGui_impl_win32.h"
 
-namespace Tomato
+namespace TomWin
 {
 	Window::WindowClass Window::WindowClass::wndClass_;
 

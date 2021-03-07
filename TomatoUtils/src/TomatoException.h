@@ -2,7 +2,7 @@
 #include <exception>
 #include <string>
 
-namespace Tomato
+namespace TomUtils
 {
 	class TomatoException : public std::exception {
 	public:

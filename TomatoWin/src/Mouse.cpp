@@ -1,7 +1,7 @@
 #include "Mouse.h"
 #include "TomatoWindows.h"
 
-namespace Tomato
+namespace TomWin
 {
 	std::pair<int, int> Mouse::GetPos() const noexcept {
 		return { m_x, m_y };

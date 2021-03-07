@@ -8,7 +8,7 @@
 //#pragma comment(lib, "Shlwapi.lib")
 //#pragma comment(lib, "Pathcch.lib")
 
-namespace Tomato
+namespace TomUtils
 {
 	// The openOutputStream function opens a file on the hard drive and sets the output precision
 	bool FileLogPolicy::OpenOutputStream(const std::wstring& filename) {

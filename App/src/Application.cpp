@@ -9,7 +9,7 @@
 namespace App
 {
 	Application::Application()
-		: m_window(100, 100, "Tomato") {
+		:m_clientHeight(200), m_clientWidth(200), m_window(100, 100, "Tomato") {
 		m_console.CreateConsole();
 		m_window.SetForeground();
 		m_activeLogger = false;
@@ -63,7 +63,7 @@ namespace App
 		// start the main loop
 		while (true) {
 			// process all messages pending but do not block new messages
-			if (const auto ecode = Tomato::Window::ProcessMessage()) {
+			if (const auto ecode = TomWin::Window::ProcessMessage()) {
 				// if return optional has value it means we are quitting
 				// so return exit code
 				return *ecode;
@@ -85,7 +85,7 @@ namespace App
 		std::wstring logFile = m_logFilePath + L"\\TomatoEngine.log";
 
 		//create file logger
-		std::shared_ptr<Tomato::Logger<Tomato::FileLogPolicy>> engineLogger(new Tomato::Logger<Tomato::FileLogPolicy>(logFile));
+		std::shared_ptr<TomUtils::Logger<TomUtils::FileLogPolicy>> engineLogger(new TomUtils::Logger<TomUtils::FileLogPolicy>(logFile));
 
 		// set logger to active
 		m_activeLogger = true;
@@ -94,7 +94,7 @@ namespace App
 		engineLogger->SetThreadName("mainThread");
 
 		//register the logging service
-		Tomato::ServiceLocator::ProvideFileLoggingService(engineLogger);
+		TomUtils::ServiceLocator::ProvideFileLoggingService(engineLogger);
 
 #ifndef NDEBUG
 	// print starting message
@@ -148,10 +148,10 @@ namespace App
 			if (prefFile.peek() == std::ifstream::traits_type::eof()) {
 				// if file is empty, create it
 				try {
-					Tomato::Logger<Tomato::FileLogPolicy> prefFileCreator(pathToPrefFile.c_str());
+					TomUtils::Logger<TomUtils::FileLogPolicy> prefFileCreator(pathToPrefFile.c_str());
 					std::stringstream printPref;
 					printPref << "config =\r\n{ \r\n\tresolution = { width = 800, y = height }\r\n}";
-					prefFileCreator.Print<Tomato::Config>(printPref.str());
+					prefFileCreator.Print<TomUtils::Config>(printPref.str());
 				} catch (std::runtime_error) {
 					return false;
 				}
@@ -159,10 +159,10 @@ namespace App
 		} else {
 			// the file does not exist, create it		
 			try {
-				Tomato::Logger<Tomato::FileLogPolicy> prefFileCreator(pathToPrefFile.c_str());
+				TomUtils::Logger<TomUtils::FileLogPolicy> prefFileCreator(pathToPrefFile.c_str());
 				std::stringstream printPref;
 				printPref << "config =\r\n{ \r\n\tresolution = { width = 800, height = 600 }\r\n}";
-				prefFileCreator.Print<Tomato::Config>(printPref.str());
+				prefFileCreator.Print<TomUtils::Config>(printPref.str());
 			} catch (std::runtime_error) {
 				return false;
 			}

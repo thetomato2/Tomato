@@ -1,7 +1,7 @@
 #pragma once
 #include <chrono>
 
-namespace Tomato {
+namespace TomUtils {
 	class TomatoTimer {
 	public:
 		TomatoTimer();

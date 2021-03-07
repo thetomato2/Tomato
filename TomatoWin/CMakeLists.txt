@@ -12,6 +12,7 @@ set(TomatoWin_SRCS
 )
 
 set(TomatoWin_HDRS
+	"src/Console.h"
 	"src/Window.h"
 	"src/TomatoWindows.h"
 	"src/Keyboard.h"

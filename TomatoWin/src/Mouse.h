@@ -1,7 +1,7 @@
 #pragma once
 #include <queue>
 
-namespace Tomato
+namespace TomWin
 {
 	class Mouse {
 		friend class Window;
@@ -88,7 +88,7 @@ namespace Tomato
 		bool m_isLeftPressed = false;
 		bool m_isRightPressed = false;
 		bool m_isInWindow = false;
-		bool m_wheelDeltaCarry = 0;
+		int m_wheelDeltaCarry = 0;
 		std::queue<Event> m_buffer;
 	};
 }

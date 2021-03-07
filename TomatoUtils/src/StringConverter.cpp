@@ -1,6 +1,7 @@
 #include "StringConverter.h"
 
-namespace Tomato
+namespace TomUtils
+
 {
 
 	std::wstring StringConverter::s2ws(const std::string& str) {

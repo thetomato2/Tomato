@@ -1,7 +1,8 @@
 #pragma once
 #include "Log.h"							// logging
 
-namespace Tomato
+namespace TomUtils
+
 {
 	class ServiceLocator {
 	private:

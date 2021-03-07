@@ -13,7 +13,6 @@ set(TomatoUtils_SRCS
 )
 
 set(TomatoUtils_HDRS
-	"src/Console.h"
 	"src/TomatoException.h"
 	"src/Log.h"
 	"src/ServiceLocator.h"

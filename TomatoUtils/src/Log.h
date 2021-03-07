@@ -9,9 +9,9 @@
 #include <vector>
 #include <map>
 
-namespace Tomato
+namespace TomUtils
 {
-// Log Policies
+	// Log Policies
 	// Virtual abstract class - interface to open and close streams (and to write them)
 	class LogPolicyInterface {
 	public:
@@ -104,7 +104,7 @@ namespace Tomato
 	Logger<LogPolicy>::~Logger() {
 #ifndef NDEBUG
 		// print closing message
-		Tomato::ServiceLocator::GetFileLogger()->Print<Tomato::SeverityType::Info>("The file logger was shut down.");
+		TomUtils::ServiceLocator::GetFileLogger()->Print<TomUtils::SeverityType::Info>("The file logger was shut down.");
 #endif
 		// terminate the daemon by clearing the still running flag and letting it join to the main thread
 		m_isStillRunning.clear();

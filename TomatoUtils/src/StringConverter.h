@@ -3,7 +3,8 @@
 #include <locale>
 #include <codecvt>
 
-namespace Tomato
+namespace TomUtils
+
 {
 	class StringConverter {
 	public:

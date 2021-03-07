@@ -24,27 +24,27 @@ namespace App
 		std::wstring m_myDocumentsPath;
 		std::wstring m_logFilePath;
 		std::wstring m_configFilePath;
-		Tomato::Console m_console;
-		Tomato::Window m_window;
+		TomWin::Console m_console;
+		TomWin::Window m_window;
 	};
 }
 // defines
 #define TOM_LOG_INFO(msg) \
-Tomato::ServiceLocator::GetFileLogger()->Print<(Tomato::SeverityType::Info)>(msg);\
+TomUtils::ServiceLocator::GetFileLogger()->Print<(TomUtils::SeverityType::Info)>(msg);\
 SetConsoleTextAttribute(m_console.GetConOut(), 11);\
 std::cout << msg << std::endl
 
 #define TOM_LOG_DEBUG(msg) \
-Tomato::ServiceLocator::GetFileLogger()->Print<(Tomato::SeverityType::Debug)>(msg);\
+TomUtils::ServiceLocator::GetFileLogger()->Print<(TomUtils::SeverityType::Debug)>(msg);\
 SetConsoleTextAttribute(m_console.GetConOut(), 10);\
 std::cout << msg << std::endl
 
 #define TOM_LOG_WARNING(msg) \
-Tomato::ServiceLocator::GetFileLogger()->Print<(Tomato::SeverityType::Warning)>(msg);\
+TomUtils::ServiceLocator::GetFileLogger()->Print<(TomUtils::SeverityType::Warning)>(msg);\
 SetConsoleTextAttribute(m_console.GetConOut(), 14);\
 std::cout << msg << std::endl
 
 #define TOM_LOG_ERROR(msg) \
-Tomato::ServiceLocator::GetFileLogger()->Print<(Tomato::SeverityType::Error)>(msg);\
+TomUtils::ServiceLocator::GetFileLogger()->Print<(TomUtils::SeverityType::Error)>(msg);\
 SetConsoleTextAttribute(m_console.GetConOut(), 12); \
 std::cout << msg << std::endl

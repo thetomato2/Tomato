@@ -26025,7 +26025,7 @@ namespace sol {
 		state(const state&) = delete;
 		state(state&&) = default;
 		state& operator=(const state&) = delete;
-		state& operator=(state&& that) {
+		state& operator=(state&& that) noexcept {
 			state_view::operator=(std::move(that));
 			unique_base::operator=(std::move(that));
 			return *this;
@@ -26427,7 +26427,7 @@ namespace sol {
 		}
 		variadic_args(const variadic_args&) = default;
 		variadic_args& operator=(const variadic_args&) = default;
-		variadic_args(variadic_args&& o)
+		variadic_args(variadic_args&& o) noexcept
 			: L(o.L), index(o.index), stacktop(o.stacktop) {
 			// Must be manual, otherwise destructor will screw us
 			// return count being 0 is enough to keep things clean

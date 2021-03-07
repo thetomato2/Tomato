@@ -1,6 +1,6 @@
 #include "ServiceLocator.h"
 
-namespace Tomato 
+namespace TomUtils
 {
 	// file logger
 	std::shared_ptr<Logger<FileLogPolicy> > ServiceLocator::m_fileLogger = NULL;
