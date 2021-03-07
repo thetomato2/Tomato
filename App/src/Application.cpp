@@ -59,7 +59,6 @@ namespace App
 		TOM_LOG_INFO(oss.str());
 
 		TOM_LOG_INFO("App configured. Main loop starting...");
-		TOM_LOG_INFO("Hello slu");
 
 		// start the main loop
 		while (true) {

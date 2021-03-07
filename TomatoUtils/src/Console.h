@@ -46,6 +46,6 @@ namespace Tomato
 		HANDLE GetConOut() const noexcept { return m_conOut; }
 	private:
 		bool m_isActive = false;
-		HANDLE m_conOut;
+		HANDLE m_conOut = nullptr;
 	};
 }

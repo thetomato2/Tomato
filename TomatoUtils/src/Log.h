@@ -132,34 +132,35 @@ namespace Tomato
 	void Logger<LogPolicy>::Print(std::stringstream stream) {
 		std::stringstream logStream;
 
+		if (!(severity == SeverityType::Config)) {
 		// get time
-		SYSTEMTIME localTime;
-		GetLocalTime(&localTime);
+			SYSTEMTIME localTime;
+			GetLocalTime(&localTime);
 
-		// header: line number and date (x: xx/xx/xxxx xx:xx:xx)
-		if (m_logLineNumber != 0)
-			logStream << "\r\n";
-		logStream << m_logLineNumber++ << ": " << localTime.wMonth << "/" << localTime.wDay << "/" << localTime.wYear << " " << localTime.wHour << ":" << localTime.wMinute << ":" << localTime.wSecond << "\t";
+			// header: line number and date (x: xx/xx/xxxx xx:xx:xx)
+			if (m_logLineNumber != 0)
+				logStream << "\r\n";
+			logStream << m_logLineNumber++ << ": " << localTime.wMonth << "/" << localTime.wDay << "/" << localTime.wYear << " " << localTime.wHour << ":" << localTime.wMinute << ":" << localTime.wSecond << "\t";
 
-		// write down warning level
-		switch (severity) {
-		case SeverityType::Info:
-			logStream << "INFO:    ";
-			break;
-		case SeverityType::Debug:
-			logStream << "DEBUG:   ";
-			break;
-		case SeverityType::Warning:
-			logStream << "WARNING: ";
-			break;
-		case SeverityType::Error:
-			logStream << "ERROR:   ";
-			break;
-		};
+			// write down warning level
+			switch (severity) {
+			case SeverityType::Info:
+				logStream << "INFO:    ";
+				break;
+			case SeverityType::Debug:
+				logStream << "DEBUG:   ";
+				break;
+			case SeverityType::Warning:
+				logStream << "WARNING: ";
+				break;
+			case SeverityType::Error:
+				logStream << "ERROR:   ";
+				break;
+			};
 
-		// write thread name
-		logStream << m_threadName[std::this_thread::get_id()] << ":\t";
-
+			// write thread name
+			logStream << m_threadName[std::this_thread::get_id()] << ":\t";
+		}
 		// write the actual message
 		logStream << stream.str();
 		std::lock_guard<std::timed_mutex> lock(m_writeMutex);
